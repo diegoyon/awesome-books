@@ -1,7 +1,7 @@
 "use strict";
 // Array of books
-let collection = [];
-console.log(localStorage.getItem("data"));
+let collection;
+
 if (localStorage.getItem("data") === null) {
   collection = [];
 } else {
@@ -40,9 +40,9 @@ function remove(event) {
 function refreshPage() {
   books.innerHTML = "";
   for (let i = 0; i < collection.length; i++) {
-    titledisplay = document.createElement("h2");
+    const titledisplay = document.createElement("h2");
     titledisplay.innerText = collection[i].title;
-    authordisplay = document.createElement("h3");
+    const authordisplay = document.createElement("h3");
     authordisplay.innerText = collection[i].author;
 
     books.appendChild(titledisplay);
