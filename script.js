@@ -1,3 +1,10 @@
+class Book{
+  constructor(title, author){
+    this.title = title;
+    this.author = author;
+  }
+}
+
 class BookCollection{
   constructor(){
     this.booklist = [];
@@ -12,91 +19,48 @@ class BookCollection{
   }
 }
 
-class Book{
-  constructor(title, author){
-    this.title = title;
-    this.author = author;
-  }
-}
-
-
-// Array of books
-let collection;
-
 const books = document.querySelector('.book-collection');
-
 const add = document.querySelector('.button');
-
 const inputtitle = document.querySelector('.input-title');
 const inputauthor = document.querySelector('.input-author');
 
-if (localStorage.getItem('data') === null) {
-  collection = [];
-} else {
-  collection = JSON.parse(localStorage.getItem('data'));
-}
-function addBook(title, author) {
-  const book = {};
-  book.title = title;
-  book.author = author;
-  collection.push(book);
-}
+let collection = new BookCollection;
 
-function removeBook(title) {
-  collection = collection.filter((book) => book.title !== title);
+if (localStorage.getItem('data') !== null) {
+  collection.booklist = JSON.parse(localStorage.getItem('data'));
 }
 
 function remove(event) {
-  removeBook(event.target.className);
-  books.innerHTML = '';
-  for (let i = 0; i < collection.length; i += 1) {
-    const titledisplay = document.createElement('p');
-    titledisplay.innerText = collection[i].title;
-    const authordisplay = document.createElement('p');
-    authordisplay.innerText = collection[i].author;
-
-    books.appendChild(titledisplay);
-    books.appendChild(authordisplay);
-    const buttonremove = document.createElement('button');
-    buttonremove.innerHTML = 'remove';
-    buttonremove.classList = collection[i].title;
-    buttonremove.addEventListener('click', remove);
-    books.appendChild(buttonremove);
-    const line = document.createElement('hr');
-    books.appendChild(line);
-  }
-
-  inputtitle.value = '';
-  inputauthor.value = '';
-  localStorage.setItem('data', JSON.stringify(collection));
+  collection.removeBook(event.target.className);
+  refreshPage();
 }
 
 function refreshPage() {
   books.innerHTML = '';
-  for (let i = 0; i < collection.length; i += 1) {
-    const titledisplay = document.createElement('p');
-    titledisplay.innerText = collection[i].title;
-    const authordisplay = document.createElement('p');
-    authordisplay.innerText = collection[i].author;
+  for (let i = 0; i < collection.booklist.length; i += 1) {
+    const container = document.createElement('div');
+    container.className = 'container';
+    books.appendChild(container);
 
-    books.appendChild(titledisplay);
-    books.appendChild(authordisplay);
+    const titledisplay = document.createElement('p');
+    titledisplay.innerHTML = `"${collection.booklist[i].title}" by ${collection.booklist[i].author}`;
+    container.appendChild(titledisplay);
+
     const buttonremove = document.createElement('button');
-    buttonremove.innerHTML = 'remove';
-    buttonremove.classList = collection[i].title;
+    buttonremove.innerHTML = 'Remove';
+    buttonremove.classList = collection.booklist[i].title;
     buttonremove.addEventListener('click', remove);
-    books.appendChild(buttonremove);
-    const line = document.createElement('hr');
-    books.appendChild(line);
+    container.appendChild(buttonremove);
   }
 
   inputtitle.value = '';
   inputauthor.value = '';
-  localStorage.setItem('data', JSON.stringify(collection));
+  localStorage.setItem('data', JSON.stringify(collection.booklist));
 }
 
 function addtocollection() {
-  addBook(inputtitle.value, inputauthor.value);
+  let booktoadd = new Book(inputtitle.value, inputauthor.value);
+  collection.addBook(booktoadd);
   refreshPage();
 }
 
