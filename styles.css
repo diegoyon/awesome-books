@@ -1,7 +1,57 @@
 h1 {
-  font-size: 32px;
+  font-size: 39px;
+  font-family: sans-serif;
+  width: fit-content;
+  margin: 1rem auto;
 }
 
 p {
   margin: 0;
+  padding: 0.5rem;
+}
+
+.book-collection {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin: 2rem auto;
+  border: 2px solid black;
+}
+
+.book-collection div:nth-child(odd) {
+  background-color: rgb(196, 196, 196);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  height: 20px;
+  margin-right: 0.5rem;
+}
+
+hr {
+  width: 100px;
+  border: 2px solid black;
+  border-radius: 4px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  margin: auto;
+  gap: 1rem;
+}
+
+.form h1 {
+  margin: 0;
+}
+
+.add {
+  width: fit-content;
+  align-self: flex-end;
 }
