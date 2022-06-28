@@ -41,8 +41,8 @@ p {
 }
 
 button {
-  height: 20px;
   margin-right: 0.5rem;
+  padding: 3px;
 }
 
 hr {
