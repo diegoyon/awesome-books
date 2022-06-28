@@ -28,9 +28,9 @@ function remove(event) {
   removeBook(event.target.className);
   books.innerHTML = '';
   for (let i = 0; i < collection.length; i += 1) {
-    const titledisplay = document.createElement('h2');
+    const titledisplay = document.createElement('p');
     titledisplay.innerText = collection[i].title;
-    const authordisplay = document.createElement('h3');
+    const authordisplay = document.createElement('p');
     authordisplay.innerText = collection[i].author;
 
     books.appendChild(titledisplay);
@@ -52,9 +52,9 @@ function remove(event) {
 function refreshPage() {
   books.innerHTML = '';
   for (let i = 0; i < collection.length; i += 1) {
-    const titledisplay = document.createElement('h2');
+    const titledisplay = document.createElement('p');
     titledisplay.innerText = collection[i].title;
-    const authordisplay = document.createElement('h3');
+    const authordisplay = document.createElement('p');
     authordisplay.innerText = collection[i].author;
 
     books.appendChild(titledisplay);
