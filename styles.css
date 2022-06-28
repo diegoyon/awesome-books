@@ -1,5 +1,6 @@
 h1 {
-  font-size: 32px;
+  font-size: 39px;
+  font-family: sans-serif;
   width: fit-content;
   margin: 1rem auto;
 }
@@ -9,7 +10,7 @@ p {
   padding: 0.5rem;
 }
 
-.book-collection{
+.book-collection {
   display: flex;
   flex-direction: column;
   width: 500px;
@@ -17,28 +18,28 @@ p {
   border: 2px solid black;
 }
 
-.book-collection div:nth-child(odd){
+.book-collection div:nth-child(odd) {
   background-color: rgb(196, 196, 196);
 }
 
-.container{
+.container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-button{
+button {
   height: 20px;
   margin-right: 0.5rem;
 }
 
-hr{
+hr {
   width: 100px;
   border: 2px solid black;
-  border-radius: 4px
+  border-radius: 4px;
 }
 
-.form{
+.form {
   display: flex;
   flex-direction: column;
   width: fit-content;
@@ -46,11 +47,11 @@ hr{
   gap: 1rem;
 }
 
-.form h1{
+.form h1 {
   margin: 0;
 }
 
-.add{
+.add {
   width: fit-content;
   align-self: flex-end;
 }
