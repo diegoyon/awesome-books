@@ -1,3 +1,25 @@
+class BookCollection{
+  constructor(){
+    this.booklist = [];
+  }
+
+  addBook(book){
+    this.booklist.push(book);
+  }
+
+  removeBook(booktitle){
+    this.booklist = this.booklist.filter(book => book.title !== booktitle)
+  }
+}
+
+class Book{
+  constructor(title, author){
+    this.title = title;
+    this.author = author;
+  }
+}
+
+
 // Array of books
 let collection;
 
@@ -79,7 +101,5 @@ function addtocollection() {
 }
 
 add.addEventListener('click', addtocollection);
-
-// storage
 
 refreshPage();
