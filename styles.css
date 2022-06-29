@@ -15,7 +15,6 @@ header{
   padding: 1rem;
   margin: 0.5rem;
   border: 2px solid black;
-  margin-bottom: 5rem;
 }
 
 nav ul{
@@ -39,6 +38,7 @@ p {
 
 input{
   padding: 0.5rem;
+  border: 1px solid black;
 }
 
 button {
@@ -46,12 +46,25 @@ button {
   padding: 3px;
 }
 
+footer{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin: 0.5rem;
+  border: 2px solid black;
+}
+
 .book-collection {
   display: flex;
   flex-direction: column;
-  width: 500px;
-  margin: 2rem auto;
   border: 2px solid black;
+  max-width: 600px;
+  margin: auto;
 }
 
 .book-collection div:nth-child(odd) {
@@ -81,7 +94,7 @@ button {
 .contact-information{
   display: flex;
   flex-direction: column;
-  width: 500px;
+  max-width: 500px;
   margin: auto;
 }
 
@@ -96,4 +109,15 @@ button {
 
 .noshow{
   display: none;
+}
+
+section{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.booklist{
+  width: 100%;
 }
