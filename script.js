@@ -87,7 +87,6 @@ function updatePage() {
 }
 
 addButton.addEventListener('click', addtocollection);
-
 updatePage();
 
 const list = document.querySelector('.list');
