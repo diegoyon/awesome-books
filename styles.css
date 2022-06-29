@@ -1,12 +1,29 @@
 * {
-  font-family: sans-serif;
+  font-family: 'Comfortaa', cursive;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  text-decoration: none;
+  color: black;
+  list-style: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin: 0.5rem;
+  border: 2px solid black;
+}
+
+nav ul {
+  display: flex;
+  gap: 1rem;
 }
 
 h1 {
-  font-size: 39px;
+  font-size: 38px;
   width: fit-content;
   margin: 1rem auto;
 }
@@ -16,8 +33,12 @@ h2 {
 }
 
 p {
-  margin: 0;
   padding: 0.5rem;
+}
+
+input {
+  padding: 0.5rem;
+  border: 1px solid black;
 }
 
 button {
@@ -25,20 +46,25 @@ button {
   padding: 3px;
 }
 
-hr {
-  width: 100px;
+footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin: 0.5rem;
   border: 2px solid black;
-  border-radius: 4px;
-  margin: auto;
-  margin-bottom: 2rem;
 }
 
 .book-collection {
   display: flex;
   flex-direction: column;
-  width: 500px;
-  margin: 2rem auto;
   border: 2px solid black;
+  max-width: 600px;
+  margin: auto;
 }
 
 .book-collection div:nth-child(odd) {
@@ -63,4 +89,42 @@ hr {
   width: fit-content;
   align-self: flex-end;
   margin: 0;
+}
+
+.contact-information {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  margin: auto;
+}
+
+.contact-information ul {
+  margin-left: 3rem;
+  line-height: 1.5rem;
+}
+
+.contact-information ul li {
+  list-style: disc;
+}
+
+.noshow {
+  display: none;
+}
+
+section {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.booklist,
+.contact-information {
+  width: 100%;
+}
+
+.date {
+  float: right;
+  font-size: 0.8rem;
+  font-weight: 600;
 }
