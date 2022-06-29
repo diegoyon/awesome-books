@@ -118,3 +118,7 @@ function displaycontact() {
 list.onclick = displaylist;
 addNew.onclick = displayaddnew;
 contact.onclick = displaycontact;
+
+const date = document.querySelector('.date');
+const datetodisplay = new Date();
+date.innerHTML = datetodisplay;

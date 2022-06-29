@@ -118,6 +118,13 @@ section {
   transform: translate(-50%, -50%);
 }
 
-.booklist {
+.booklist,
+.contact-information {
   width: 100%;
+}
+
+.date {
+  float: right;
+  font-size: 0.8rem;
+  font-weight: 600;
 }
