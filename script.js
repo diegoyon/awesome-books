@@ -89,3 +89,33 @@ function updatePage() {
 addButton.addEventListener('click', addtocollection);
 
 updatePage();
+
+const list = document.querySelector('.list');
+const addNew = document.querySelector('.new');
+const contact = document.querySelector('.contact');
+
+const listSection = document.querySelector('.booklist');
+const formSection = document.querySelector('.form');
+const contactSection = document.querySelector('.contact-information');
+
+function displaylist(){
+  listSection.classList.remove('noshow');
+  formSection.classList.add('noshow');
+  contactSection.classList.add('noshow');
+}
+
+function displayaddnew(){
+  listSection.classList.add('noshow');
+  formSection.classList.remove('noshow');
+  contactSection.classList.add('noshow');
+}
+
+function displaycontact(){
+  listSection.classList.add('noshow');
+  formSection.classList.add('noshow');
+  contactSection.classList.remove('noshow');
+}
+
+list.onclick = displaylist;
+addNew.onclick = displayaddnew;
+contact.onclick = displaycontact;
