@@ -97,19 +97,19 @@ const listSection = document.querySelector('.booklist');
 const formSection = document.querySelector('.form');
 const contactSection = document.querySelector('.contact-information');
 
-function displaylist(){
+function displaylist() {
   listSection.classList.remove('noshow');
   formSection.classList.add('noshow');
   contactSection.classList.add('noshow');
 }
 
-function displayaddnew(){
+function displayaddnew() {
   listSection.classList.add('noshow');
   formSection.classList.remove('noshow');
   contactSection.classList.add('noshow');
 }
 
-function displaycontact(){
+function displaycontact() {
   listSection.classList.add('noshow');
   formSection.classList.add('noshow');
   contactSection.classList.remove('noshow');

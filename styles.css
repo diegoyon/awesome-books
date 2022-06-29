@@ -8,7 +8,7 @@
   list-style: none;
 }
 
-header{
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -17,7 +17,7 @@ header{
   border: 2px solid black;
 }
 
-nav ul{
+nav ul {
   display: flex;
   gap: 1rem;
 }
@@ -36,7 +36,7 @@ p {
   padding: 0.5rem;
 }
 
-input{
+input {
   padding: 0.5rem;
   border: 1px solid black;
 }
@@ -46,7 +46,7 @@ button {
   padding: 3px;
 }
 
-footer{
+footer {
   position: fixed;
   bottom: 0;
   right: 0;
@@ -91,33 +91,33 @@ footer{
   margin: 0;
 }
 
-.contact-information{
+.contact-information {
   display: flex;
   flex-direction: column;
   max-width: 500px;
   margin: auto;
 }
 
-.contact-information ul{
+.contact-information ul {
   margin-left: 3rem;
   line-height: 1.5rem;
 }
 
-.contact-information ul li{
+.contact-information ul li {
   list-style: disc;
 }
 
-.noshow{
+.noshow {
   display: none;
 }
 
-section{
+section {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.booklist{
+.booklist {
   width: 100%;
 }
