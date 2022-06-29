@@ -1,13 +1,36 @@
+* {
+  font-family: sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 h1 {
   font-size: 39px;
-  font-family: sans-serif;
   width: fit-content;
   margin: 1rem auto;
+}
+
+h2 {
+  font-size: 2rem;
 }
 
 p {
   margin: 0;
   padding: 0.5rem;
+}
+
+button {
+  margin-right: 0.5rem;
+  padding: 3px;
+}
+
+hr {
+  width: 100px;
+  border: 2px solid black;
+  border-radius: 4px;
+  margin: auto;
+  margin-bottom: 2rem;
 }
 
 .book-collection {
@@ -28,27 +51,12 @@ p {
   align-items: center;
 }
 
-button {
-  height: 20px;
-  margin-right: 0.5rem;
-}
-
-hr {
-  width: 100px;
-  border: 2px solid black;
-  border-radius: 4px;
-}
-
 .form {
   display: flex;
   flex-direction: column;
   width: fit-content;
   margin: auto;
   gap: 1rem;
-}
-
-.form h1 {
-  margin: 0;
 }
 
 .add {
