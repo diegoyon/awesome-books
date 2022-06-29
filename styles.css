@@ -62,4 +62,5 @@ hr {
 .add {
   width: fit-content;
   align-self: flex-end;
+  margin: 0;
 }
