@@ -1,5 +1,6 @@
 import Book from './modules/Book.js';
 import BookCollection from './modules/BookCollection.js';
+import { displayList, displayAddNew, displayContact} from './modules/display.js';
 
 const books = document.querySelector('.book-collection');
 const addButton = document.querySelector('.add');
@@ -69,36 +70,16 @@ function updatePage() {
 addButton.addEventListener('click', addToCollection);
 updatePage();
 
+//Change what to display on screen using the navbar
 const list = document.querySelector('.list');
 const addNew = document.querySelector('.new');
 const contact = document.querySelector('.contact');
-
-const listSection = document.querySelector('.booklist');
-const formSection = document.querySelector('.form');
-const contactSection = document.querySelector('.contact-information');
-
-function displayList() {
-  listSection.classList.remove('noshow');
-  formSection.classList.add('noshow');
-  contactSection.classList.add('noshow');
-}
-
-function displayAddNew() {
-  listSection.classList.add('noshow');
-  formSection.classList.remove('noshow');
-  contactSection.classList.add('noshow');
-}
-
-function displayContact() {
-  listSection.classList.add('noshow');
-  formSection.classList.add('noshow');
-  contactSection.classList.remove('noshow');
-}
 
 list.onclick = displayList;
 addNew.onclick = displayAddNew;
 contact.onclick = displayContact;
 
+//Display date
 const date = document.querySelector('.date');
 const dateToDisplay = new Date();
 date.innerHTML = dateToDisplay;
