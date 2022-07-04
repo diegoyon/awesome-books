@@ -1,6 +1,5 @@
 import Book from './modules/Book.js';
 import BookCollection from './modules/BookCollection.js';
-import { displayList, displayAddNew, displayContact} from './modules/display.js';
 
 const books = document.querySelector('.book-collection');
 const addButton = document.querySelector('.add');
@@ -67,7 +66,10 @@ const updatePage = () => {
   }
 }
 
+//Adds listener to the add button
 addButton.addEventListener('click', addToCollection);
+
+//Updates the page with localStorage data
 updatePage();
 
 //Change what to display on screen using the navbar
@@ -75,11 +77,23 @@ const list = document.querySelector('.list');
 const addNew = document.querySelector('.new');
 const contact = document.querySelector('.contact');
 
+import { displayList, displayAddNew, displayContact} from './modules/display.js';
+
 list.onclick = displayList;
 addNew.onclick = displayAddNew;
 contact.onclick = displayContact;
 
-//Display date
+//Use of luxon to get date
+import { DateTime } from "./modules/luxon.js";
 const date = document.querySelector('.date');
-const dateToDisplay = new Date();
-date.innerHTML = dateToDisplay;
+
+//Function to constantly update time after one second
+const runTime =() => {
+  const dateToDisplay = DateTime.now();
+  date.innerHTML = dateToDisplay.toLocaleString(DateTime.DATETIME_MED_WITH_SECONDS);
+  setTimeout(function (){
+    runTime();
+  },1000)
+}
+
+runTime();
