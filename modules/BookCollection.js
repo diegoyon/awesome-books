@@ -3,11 +3,9 @@ export default class BookCollection {
     this.booklist = [];
   }
 
-  addBook(book) {
-    this.booklist.push(book);
-  }
+  addBook = (book) => this.booklist.push(book);
 
-  removeBook(booktitle) {
+  removeBook = (booktitle) => {
     this.booklist = this.booklist.filter((book) => book.title !== booktitle);
   }
 }
