@@ -13,7 +13,7 @@ if (localStorage.getItem('data') !== null) {
   collection.booklist = JSON.parse(localStorage.getItem('data'));
 }
 
-function removeElement(event) {
+const removeElement = (event) => {
   // Remove book from collection
   collection.removeBook(event.target.className);
 
@@ -25,7 +25,7 @@ function removeElement(event) {
   localStorage.setItem('data', JSON.stringify(collection.booklist));
 }
 
-function createBookElement(bookName, bookAuthor) {
+const createBookElement = (bookName, bookAuthor) => {
   // Create container of book description and remove button
   const container = document.createElement('div');
   container.className = `container ${bookName}`;
@@ -44,7 +44,7 @@ function createBookElement(bookName, bookAuthor) {
   container.appendChild(buttonremove);
 }
 
-function addToCollection() {
+const addToCollection =() => {
   // Add book to collection
   const bookToAdd = new Book(inputTitle.value, inputAuthor.value);
   collection.addBook(bookToAdd);
@@ -60,7 +60,7 @@ function addToCollection() {
   localStorage.setItem('data', JSON.stringify(collection.booklist));
 }
 
-function updatePage() {
+const updatePage = () => {
   // Updates the page if there is data stored in Local Storage
   for (let i = 0; i < collection.booklist.length; i += 1) {
     createBookElement(collection.booklist[i].title, collection.booklist[i].author);
