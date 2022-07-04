@@ -1,30 +1,10 @@
-/* eslint-disable max-classes-per-file */
-
-class Book {
-  constructor(title, author) {
-    this.title = title;
-    this.author = author;
-  }
-}
-
-class BookCollection {
-  constructor() {
-    this.booklist = [];
-  }
-
-  addBook(book) {
-    this.booklist.push(book);
-  }
-
-  removeBook(booktitle) {
-    this.booklist = this.booklist.filter((book) => book.title !== booktitle);
-  }
-}
+import Book from './modules/Book.js';
+import BookCollection from './modules/BookCollection.js';
 
 const books = document.querySelector('.book-collection');
 const addButton = document.querySelector('.add');
-const inputtitle = document.querySelector('.input-title');
-const inputauthor = document.querySelector('.input-author');
+const inputTitle = document.querySelector('.input-title');
+const inputAuthor = document.querySelector('.input-author');
 const collection = new BookCollection();
 
 if (localStorage.getItem('data') !== null) {
@@ -37,43 +17,43 @@ function removeElement(event) {
   collection.removeBook(event.target.className);
 
   // Remove book from DOM
-  const containertoremove = document.querySelector(`.${event.target.className}`);
-  containertoremove.remove();
+  const containerToRemove = document.querySelector(`.${event.target.className}`);
+  containerToRemove.remove();
 
   // Store new collection in Local Storage
   localStorage.setItem('data', JSON.stringify(collection.booklist));
 }
 
-function createBookElement(bookname, bookauthor) {
+function createBookElement(bookName, bookAuthor) {
   // Create container of book description and remove button
   const container = document.createElement('div');
-  container.className = `container ${bookname}`;
+  container.className = `container ${bookName}`;
   books.appendChild(container);
 
   // Create book description element
   const bookdescription = document.createElement('p');
-  bookdescription.innerHTML = `"${bookname}" by ${bookauthor}`;
+  bookdescription.innerHTML = `"${bookName}" by ${bookAuthor}`;
   container.appendChild(bookdescription);
 
   // Create remove button element
   const buttonremove = document.createElement('button');
   buttonremove.innerHTML = 'Remove';
-  buttonremove.classList = bookname;
+  buttonremove.classList = bookName;
   buttonremove.addEventListener('click', removeElement);
   container.appendChild(buttonremove);
 }
 
-function addtocollection() {
+function addToCollection() {
   // Add book to collection
-  const booktoadd = new Book(inputtitle.value, inputauthor.value);
-  collection.addBook(booktoadd);
+  const bookToAdd = new Book(inputTitle.value, inputAuthor.value);
+  collection.addBook(bookToAdd);
 
   // Add book to DOM
-  createBookElement(booktoadd.title, booktoadd.author);
+  createBookElement(bookToAdd.title, bookToAdd.author);
 
   // Reset input values
-  inputtitle.value = '';
-  inputauthor.value = '';
+  inputTitle.value = '';
+  inputAuthor.value = '';
 
   // Store new collection in Local Storage
   localStorage.setItem('data', JSON.stringify(collection.booklist));
@@ -86,7 +66,7 @@ function updatePage() {
   }
 }
 
-addButton.addEventListener('click', addtocollection);
+addButton.addEventListener('click', addToCollection);
 updatePage();
 
 const list = document.querySelector('.list');
@@ -97,28 +77,28 @@ const listSection = document.querySelector('.booklist');
 const formSection = document.querySelector('.form');
 const contactSection = document.querySelector('.contact-information');
 
-function displaylist() {
+function displayList() {
   listSection.classList.remove('noshow');
   formSection.classList.add('noshow');
   contactSection.classList.add('noshow');
 }
 
-function displayaddnew() {
+function displayAddNew() {
   listSection.classList.add('noshow');
   formSection.classList.remove('noshow');
   contactSection.classList.add('noshow');
 }
 
-function displaycontact() {
+function displayContact() {
   listSection.classList.add('noshow');
   formSection.classList.add('noshow');
   contactSection.classList.remove('noshow');
 }
 
-list.onclick = displaylist;
-addNew.onclick = displayaddnew;
-contact.onclick = displaycontact;
+list.onclick = displayList;
+addNew.onclick = displayAddNew;
+contact.onclick = displayContact;
 
 const date = document.querySelector('.date');
-const datetodisplay = new Date();
-date.innerHTML = datetodisplay;
+const dateToDisplay = new Date();
+date.innerHTML = dateToDisplay;
